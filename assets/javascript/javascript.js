@@ -36,7 +36,7 @@ $(".breedSubmit").on("click", function(event){
 })
 
 $(document).on("click", ".dog", function(){
-    
+    $(".breedDump").empty();
     var breed = $(this).attr("data-name");
     console.log(typeof(breed));
     console.log(breed);
@@ -51,9 +51,11 @@ $(document).on("click", ".dog", function(){
     }).done(function(response){
         console.log(response);
         
-        for(var i = 0; i< topics.length; i++){
-        var data = response.data[i].images.original.url;
-        $(".breedDump").html("<center><img src = "+ data + "></center>");
+        for(var i = 0; i< 10; i++){
+        var data = response.data[i].images.downsized_large.url;
+        // var gifData = $(".breedDump").html("<center><img src = "+ data + "></center>");
+        var gifRating = response.data[i].rating;
+        $(".breedDump").append("Rating: " + gifRating + "<br>", "<img src ="+ data + "><br>" );
         }
         console.log(data);
        
