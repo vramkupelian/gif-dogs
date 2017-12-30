@@ -39,7 +39,7 @@ $(document).on("click", ".dog", function(){
     
 
     //only accepts bulldog no matter what we press
-    var breed = $(".dog").attr("data-name");
+    var breed = $(this).attr("data-name");
     console.log(typeof(breed));
     console.log(breed);
     
