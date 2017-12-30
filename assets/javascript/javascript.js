@@ -35,13 +35,15 @@ $(".breedSubmit").on("click", function(event){
     renderButtons();
 })
 
-$(document).on("click", ".dog-button", function(){
+$(document).on("click", ".dog", function(){
     
-    var breed = $(".dog-button").val();
+
+    //only accepts bulldog no matter what we press
+    var breed = $(".dog").attr("data-name");
     console.log(typeof(breed));
     console.log(breed);
     
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=asPv1ZLZQXbN0L9Jpf8sTuS2c9vOiPMh&q=" + breed + "&limit=10&offset=0&rating=G&lang=en";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=FY8bfi1LAkpNN1Y0gdWcLfVZrnRv5XXv&q=" + breed + "&limit=10&offset=0&rating=G&lang=en";
 
     //search API
     $.ajax({
@@ -49,8 +51,8 @@ $(document).on("click", ".dog-button", function(){
         method: "GET"
     }).done(function(response){
         console.log(response);
-       $(".breedDump").html(JSON.stringify(response));
-        // $(".breedDump").append(response);
+    //    $(".breedDump").html(JSON.stringify(response));
+        $(".breedDump").append(response);
     });
 
 })
