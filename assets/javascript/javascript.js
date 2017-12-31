@@ -1,4 +1,4 @@
-var topics =["bulldog", "beagle", "poodle", "chihuahua", "boxer", "rottweiler"];
+var topics =["shih tzu", "husky", "bulldog", "beagle", "poodle", "chihuahua", "boxer", "rottweiler"];
 
 function renderButtons(){
     //Delete content inside div to prevent repeat buttons
@@ -49,14 +49,20 @@ $(document).on("click", ".dog", function(){
         url: queryURL,
         method: "GET"
     }).done(function(response){
+        
         console.log(response);
         
         for(var i = 0; i< 10; i++){
-        var data = response.data[i].images.downsized_large.url;
+        //data for still image
+        var still = response.data[i].images.fixed_width_still.url;    
+        //data for gif
+        var data = response.data[i].images.fixed_width.url;
         // var gifData = $(".breedDump").html("<center><img src = "+ data + "></center>");
         var gifRating = response.data[i].rating;
-        $(".breedDump").append("Rating: " + gifRating + "<br>", "<img src ="+ data + "><br>" );
+        $(".breedDump").append("<img class = 'still " + i +"'  src ="+ still + "><br>" );
+        $(".breedDump").append("<img class = 'gif  " + i +"' src ="+ data + "><br>" );
         }
+
         console.log(data);
        
     });
@@ -64,3 +70,24 @@ $(document).on("click", ".dog", function(){
 })
 
 renderButtons();
+
+
+$(document).on("click", ".still", function(){
+    
+    for(var i=0; i< topics.length; i++){
+        if($(this).hasClass(i)){
+            $("." + i).toggle();
+        }
+    }
+
+});
+
+$(document).on("click", ".gif", function(){
+    
+    for(var i=0; i< topics.length; i++){
+        if($(this).hasClass(i)){
+            $("." + i).toggle();
+        }
+    }
+
+});
