@@ -1,3 +1,48 @@
 .gif{
     display: none;
+    /* position: relative; */
 }
+
+.giant{
+    margin: auto;
+    margin-top: 9px;
+    width: fit-content;
+    border: 1px double #5fba7d;
+    background: white;
+
+}
+
+button{
+    margin: 10px;
+    color: white;
+    background-color: #5fba7d;
+}
+
+img{
+    margin: auto;
+    
+}
+
+.breedDump{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    /* grid-auto-columns: minmax(100px,300px); */
+    
+    align-content: center;
+}
+
+form{
+    /* margin: auto; */
+   position: inherit;
+}
+
+h2,h4{
+    margin: auto;
+    color: #5fba7d;
+}
+
+p{
+    color: #5fba7d;
+}
+

@@ -3,22 +3,32 @@
     <head>
         <title>Gif Dogs</title>
     
-        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="./assets/css/style.css" rel="stylesheet">
         <style>
+            body{
+                background-image:url(assets/images/grass1.jpg);
+                background-size: 150px;
+            }
         </style>
     </head>
     <body>
 
-        <div class = "breedsLoc"></div>
+        <div class = "giant"> 
+
+            <h2>Which is your favorite breed of dog?</h2>
+            <div class = "breedsLoc"></div>
         
+            <h4> Don't see your favorite here? Add a button for it!</h4>
+            <form class = "form-dogs">
+                <label for = "dog-input">Add a breed</label>
+                <input type ="text" class = "dog-input"> <br>
+                <input class = "breedSubmit" type = "submit" value = "Add Breed">  
+            </form>
+            <p>Powered by GIPHY</p>        
 
-        <form class = "form-dogs">
-            <label for = "dog-input">Add a breed</label>
-            <input type ="text" class = "dog-input"> <br>
-          <input class = "breedSubmit" type = "submit" value = "Add Breed">  
-        </form>
+            <div class = "breedDump"></div>
 
-        <div class = "breedDump"></div>
+        </div>
         
         <script type = "text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type = "text/javascript" src = "./assets/javascript/javascript.js"></script>

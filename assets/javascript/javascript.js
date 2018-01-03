@@ -24,9 +24,12 @@ $(".breedSubmit").on("click", function(event){
     //Grabs input from textbox
     var breed = $(".dog-input").val();
 
-    //Make sure input field isn't empty
+    //Make sure input field isn't empty before adding button ie. no empty buttons
     if(breed){
         $(".breedsLoc").append("<button>" + breed + "</button>");
+    }
+    else{
+       return;
     }
 
     //Breed from textbox is added to array
@@ -56,11 +59,11 @@ $(document).on("click", ".dog", function(){
         //data for still image
         var still = response.data[i].images.fixed_width_still.url;    
         //data for gif
+        // var data = response.data[i].images.fixed_width.url;
         var data = response.data[i].images.fixed_width.url;
-        // var gifData = $(".breedDump").html("<center><img src = "+ data + "></center>");
         var gifRating = response.data[i].rating;
-        $(".breedDump").append("<img class = 'still " + i +"'  src ="+ still + "><br>" );
-        $(".breedDump").append("<img class = 'gif  " + i +"' src ="+ data + "><br>" );
+        $(".breedDump").append("<img class = 'still " + i +"'  src ="+ still + ">" );
+        $(".breedDump").append("<img class = 'gif  " + i +"' src ="+ data + ">" );
         }
 
         console.log(data);
@@ -71,10 +74,9 @@ $(document).on("click", ".dog", function(){
 
 renderButtons();
 
-
 $(document).on("click", ".still", function(){
     
-    for(var i=0; i< topics.length; i++){
+    for(var i=0; i< 10; i++){
         if($(this).hasClass(i)){
             $("." + i).toggle();
         }
@@ -84,7 +86,7 @@ $(document).on("click", ".still", function(){
 
 $(document).on("click", ".gif", function(){
     
-    for(var i=0; i< topics.length; i++){
+    for(var i=0; i< 10; i++){
         if($(this).hasClass(i)){
             $("." + i).toggle();
         }
