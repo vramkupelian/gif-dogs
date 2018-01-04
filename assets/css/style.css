@@ -20,7 +20,12 @@ button{
 
 img{
     margin: auto;
-    
+    padding: 25px;
+}
+
+.breedsLoc{
+    width: fit-content;
+    margin: auto;
 }
 
 .breedDump{
@@ -33,16 +38,25 @@ img{
 }
 
 form{
-    /* margin: auto; */
-   position: inherit;
+    width:fit-content;
+    margin: auto;
+   position: relative;
+   /* left: 20%; */
 }
 
-h2,h4{
+h2,h4,p{
+    width: fit-content;
     margin: auto;
     color: #5fba7d;
+    position: relative;
+    /* left: 20%; */
 }
 
-p{
+.breedSubmit{
     color: #5fba7d;
+    position: relative;
+   left:32%;
+    
 }
+
 

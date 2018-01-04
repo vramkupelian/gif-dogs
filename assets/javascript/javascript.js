@@ -1,4 +1,4 @@
-var topics =["shih tzu", "husky", "bulldog", "beagle", "poodle", "chihuahua", "boxer", "rottweiler"];
+var topics =["Shih Tzu", "Husky", "Bulldog", "Beagle", "Poodle", "Chihuahua", "Boxer", "Rottweiler"];
 
 function renderButtons(){
     //Delete content inside div to prevent repeat buttons
@@ -6,11 +6,11 @@ function renderButtons(){
 
     //generate button based off array
     for(var i = 0; i<topics.length; i++){
-        var a = $("<button>");
-        a.addClass("dog");
-        a.attr("data-name", topics[i]);
-        a.text(topics[i]);
-        $(".breedsLoc").append(a);
+        var tempButton = $("<button>");
+        tempButton.addClass("dog");
+        tempButton.attr("data-name", topics[i]);
+        tempButton.text(topics[i]);
+        $(".breedsLoc").append(tempButton);
     }
 }
 
@@ -57,10 +57,10 @@ $(document).on("click", ".dog", function(){
         
         for(var i = 0; i< 10; i++){
         //data for still image
-        var still = response.data[i].images.fixed_width_still.url;    
+        var still = response.data[i].images.fixed_height_still.url;    
         //data for gif
         // var data = response.data[i].images.fixed_width.url;
-        var data = response.data[i].images.fixed_width.url;
+        var data = response.data[i].images.fixed_height.url;
         var gifRating = response.data[i].rating;
         $(".breedDump").append("<img class = 'still " + i +"'  src ="+ still + ">" );
         $(".breedDump").append("<img class = 'gif  " + i +"' src ="+ data + ">" );
