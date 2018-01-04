@@ -57,10 +57,10 @@ $(document).on("click", ".dog", function(){
         
         for(var i = 0; i< 10; i++){
         //data for still image
-        var still = response.data[i].images.fixed_height_still.url;    
+        var still = response.data[i].images.fixed_width_still.url;    
         //data for gif
         // var data = response.data[i].images.fixed_width.url;
-        var data = response.data[i].images.fixed_height.url;
+        var data = response.data[i].images.fixed_width.url;
         var gifRating = response.data[i].rating;
         $(".breedDump").append("<img class = 'still " + i +"'  src ="+ still + ">" );
         $(".breedDump").append("<img class = 'gif  " + i +"' src ="+ data + ">" );

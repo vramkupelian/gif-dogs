@@ -5,8 +5,9 @@
 
 .giant{
     margin: auto;
-    margin-top: 9px;
+    margin-top: auto;
     width: fit-content;
+    vertical-align: middle;
     border: 1px double #5fba7d;
     background: white;
 
@@ -20,7 +21,8 @@ button{
 
 img{
     margin: auto;
-    padding: 25px;
+    padding-bottom: 10px;
+   
 }
 
 .breedsLoc{
