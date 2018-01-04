@@ -43,7 +43,9 @@ $(document).on("click", ".dog", function(){
     var breed = $(this).attr("data-name");
     console.log(typeof(breed));
     console.log(breed);
-   
+    
+    $(".giant").removeClass("blank");
+
     //search endpoint
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=FY8bfi1LAkpNN1Y0gdWcLfVZrnRv5XXv&q=" + breed + "&limit=10&offset=0&rating=G&lang=en";
    
